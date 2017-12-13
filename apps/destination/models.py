@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from datetime import datetime
+from user_manage.models import UserProfile
 
 
 # Create your models here.
@@ -11,7 +12,7 @@ from datetime import datetime
 class Destination(models.Model):
 
     name = models.CharField(max_length=50, verbose_name=u'目的地名称')
-    publish_user = models.ForeignKey()
+    publish_user = models.ForeignKey(UserProfile, verbose_name='发布者', null=True, blank=True)
 
 
 
